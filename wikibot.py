@@ -39,10 +39,14 @@ def createList(r1, r2):
     # Driver Code
 
 
-r1, r2 = 2900000, 2950000
-page2 = pywikibot.Page(site, 'Forum:Count to a million')
-page2.text = page2.text + "<h2>bot returns from the deceased</h2>" + str(createList(r1, r2)) + " ~~~~"
-page2.save('i\'m back baby')
+r1, r2 = 4000003, 4010000
+page2 = pywikibot.Page(site, 'Forum:Count to a billion')
+page2.text = page2.text + "\n==is it against policy for this bot to \"autopatrol\" users who don't actually have the autopatrol right?==\n" + str(createList(r1, r2)) + " ~~~~"
+page2.save('Bot: Updating [[UN:CTAB]]')
+
+page3 = pywikibot.Page(site, 'Template:CTAB')
+page3.text = page3.text.replace(str(r1 - 1), str(r2))
+page3.save('Bot: Updating {{CTAB}}')
 
 # task 3: automatically sending uw-coi notices to users with uw-advert1 or uw-advert2 notices
 
